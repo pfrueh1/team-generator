@@ -132,12 +132,19 @@ const promptUser = teamData => {
             console.log('file created!')
         })
     })
+    .then(response => {
+        console.log(response)
+        fs.copyFile('./src/style.css', './dist/style.css', err => {
+            if(err) {
+                throw(err)
+            }
+            console.log('stylesheet copied successfully')
+        })
+    })
     .catch(error => {
         console.log(error);
     })
-    .then(response => {
-        console.log(response)
-    })
+   
   };
 
   promptUser();

@@ -15,10 +15,10 @@ function generateEmployee(templateData) {
   const htmlArr = [];
   for(let i = 0; i < templateData.length; i++) {
   htmlArr.push(`
-  <div class="card" style="width: 18rem;">
+  <div class="card rounded bg-secondary text-light" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${templateData[i].name}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">${templateData[i].getRole()}</h6>
+      <h6 class="card-subtitle mb-2">${templateData[i].getRole()}</h6>
       <p class="card-text">${templateData[i].id}
       </br>Email: <a href = "mailto: ${templateData[i].email}">${templateData[i].email}</a>
       </br>${getRoleItem(templateData[i])}</p>
@@ -56,13 +56,13 @@ module.exports = templateData => {
     <body>
       <header>
         <div class="container flex-row justify-space-between align-center py-3">
-          <h1 class="page-title text-secondary bg-dark py-2 px-3">My Team</h1>
+          <h1 class="page-title bg-dark py-2 px-3">My Team</h1>
           <nav class="flex-row">
           </nav>
         </div>
       </header>
       <main class="container my-5">
-      <div class = 'row d-flex justify-content-between'>
+      <div class = 'row d-flex justify-content-around'>
         ${generateEmployee(templateData)}
       </div>
       </main>
